@@ -23,7 +23,7 @@ namespace MathGame
 
         static void Intro()
         {
-            Console.WriteLine("Welcome to the game! \nI'm going to ask you a few math problems, so let's answer them the best we can.\n\n");
+            Console.WriteLine("\nWelcome to the game! \nI'm going to ask you a few math problems, so let's answer them the best we can.\n\n");
             Console.WriteLine("Choose a math operation: \n+ for Addition\n- for Subtraction\n* for Multipication\n/ for Division\nrandom for Random\nlist for the list of previous games.\n");
             StartTest(Console.ReadLine());
         }
@@ -35,7 +35,7 @@ namespace MathGame
             //checking if the right symbol is used
             if (!allowedSymbols.Contains(symbol))
             {
-                Console.WriteLine("Didn't use the right symbol. Please use correct symbol.");
+                Console.WriteLine("\nDidn't use the right symbol. Please use correct symbol.");
                 Intro();
                 return;
             }
@@ -68,7 +68,8 @@ namespace MathGame
             //converting the stopwatch time to readable seconds.
             TimeSpan span = stopwatch.Elapsed;
             double totalSeconds = span.TotalSeconds;
-            Console.WriteLine($"Good job! This is how many seconds you took: {totalSeconds}");
+            Console.WriteLine($"\nGood job! This is how many seconds you took: {totalSeconds}\n");
+            stopwatch.Reset();
 
             Console.WriteLine("You've done it! Click on any button to start over, or close out of the program to leave.\n\n");
             Console.ReadLine();
@@ -106,13 +107,13 @@ namespace MathGame
 
                 if (answer == result)
                 {
-                    Console.WriteLine("Correct! Good job!");
+                    Console.WriteLine("\nCorrect! Good job!\n");
                     singleTestResults.Add($"Question: {problem}. Answer correct.");
                     
                 }
                 else
                 {
-                    Console.WriteLine($"Incorrect. It's actually {result}");
+                    Console.WriteLine($"\nIncorrect. It's actually {result}\n");
                     singleTestResults.Add($"Question: {problem}. Answer incorrect. Wrote {answer} instead of {result}");
 
                 }
@@ -132,7 +133,7 @@ namespace MathGame
             if(allTestResults.Count > 0) {
                 for (int i = 0; i < allTestResults.Count; i++)
                 {
-                    Console.WriteLine($"Test {i + 1}");
+                    Console.WriteLine($"\nTest {i + 1}\n");
                     for (int j = 0; j < allTestResults[i].Count; j++)
                     {
                         Console.WriteLine(allTestResults[i][j]);
@@ -141,7 +142,7 @@ namespace MathGame
             }
             else
             {
-                Console.WriteLine("Hmm, it doesn't seem like you have any tests  just yet...\n");
+                Console.WriteLine("\nHmm, it doesn't seem like you have any tests  just yet...\n");
             }
 
                 Intro();
