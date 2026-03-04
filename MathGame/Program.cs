@@ -24,7 +24,7 @@ namespace MathGame
         static void Intro()
         {
             Console.WriteLine("\nWelcome to the game! \nI'm going to ask you a few math problems, so let's answer them the best we can.\n\n");
-            Console.WriteLine("Choose a math operation: \n+ for Addition\n- for Subtraction\n* for Multipication\n/ for Division\nrandom for Random\nlist for the list of previous games.\n");
+            Console.WriteLine("Choose a math operation: \n+ for Addition\n- for Subtraction\n* for Multiplication\n/ for Division\nrandom for Random\nlist for the list of previous games.\n");
             StartTest(Console.ReadLine());
         }
 
@@ -87,7 +87,7 @@ namespace MathGame
             int secondNumber = random.Next(1, 101);
             int firstNumber = random.Next(1, 101);
 
-            //making sure the number won't ever decome a decimal when dividing
+            //making sure the number won't ever become a decimal when dividing
             if (symbol == "/")
             {
                 secondNumber = random.Next(1, 101);
