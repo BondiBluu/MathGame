@@ -14,8 +14,6 @@ namespace MathGame
         //stopwatch to time the test
         static Stopwatch stopwatch = new Stopwatch();
 
-        static int correctAnswerCount = 0;
-
         static void Main(string[] args)
         {
             
@@ -48,6 +46,8 @@ namespace MathGame
                 return;
             }
 
+            stopwatch.Start();
+
             for (int i = 0; i < 6; i++)
             {
                 if(symbol == "random")
@@ -63,6 +63,15 @@ namespace MathGame
                     
             }
             
+            stopwatch.Stop();
+
+            //converting the stopwatch time to readable seconds.
+            TimeSpan span = stopwatch.Elapsed;
+            double totalSeconds = span.TotalSeconds;
+            Console.WriteLine($"Good job! This is how many seconds you took: {totalSeconds}");
+
+            Console.WriteLine("You've done it! Click on any button to start over, or close out of the program to leave.\n\n");
+            Console.ReadLine();
 
             //add the whole single list results to the big list
             allTestResults.Add(new List<string>(singleTestResults));
